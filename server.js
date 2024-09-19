@@ -6,6 +6,8 @@ import cors from "cors";
 import bodyParser from "body-parser";
 import cookieParser from 'cookie-parser';
 
+import { mongoDbConnection } from "./config/mongoDb.js";
+
 // enviroment variable
 dotenv.config();
  
@@ -36,6 +38,7 @@ app.use(cookieParser());
 
 // listen server
 app.listen(PORT, () => {
+  mongoDbConnection(),
   console.log(` Server is running on port ${PORT}`.bgGreen.black);
 });
 
