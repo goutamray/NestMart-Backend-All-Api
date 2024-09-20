@@ -12,6 +12,7 @@ import categoryRouter from "./routes/category.js";
 import subCategoryRouter from "./routes/subCategory.js"; 
 import sliderRouter from "./routes/slider.js"; 
 import productRamRouter from "./routes/productRam.js"; 
+import productWeightRouter from "./routes/productWeight.js"; 
 
 // enviroment variable
 dotenv.config();
@@ -46,6 +47,7 @@ app.use("/api/v1/category", categoryRouter);
 app.use("/api/v1/slider", sliderRouter);  
 app.use("/api/v1/subCategory", subCategoryRouter);  
 app.use("/api/v1/productRam", productRamRouter);  
+app.use("/api/v1/productWeight", productWeightRouter);  
 
 
 // listen server
