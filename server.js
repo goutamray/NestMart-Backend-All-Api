@@ -8,7 +8,10 @@ import cookieParser from 'cookie-parser';
 
 import { mongoDbConnection } from "./config/mongoDb.js";
 
-import categoryRouter from "./routes/category.js"
+import categoryRouter from "./routes/category.js"; 
+import subCategoryRouter from "./routes/subCategory.js"; 
+import sliderRouter from "./routes/slider.js"; 
+import productRamRouter from "./routes/productRam.js"; 
 
 // enviroment variable
 dotenv.config();
@@ -40,6 +43,9 @@ app.use(cookieParser());
 
 // routes 
 app.use("/api/v1/category", categoryRouter);  
+app.use("/api/v1/slider", sliderRouter);  
+app.use("/api/v1/subCategory", subCategoryRouter);  
+app.use("/api/v1/productRam", productRamRouter);  
 
 
 // listen server
