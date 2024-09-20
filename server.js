@@ -8,6 +8,8 @@ import cookieParser from 'cookie-parser';
 
 import { mongoDbConnection } from "./config/mongoDb.js";
 
+import categoryRouter from "./routes/category.js"
+
 // enviroment variable
 dotenv.config();
  
@@ -16,6 +18,7 @@ const PORT = process.env.PORT || 6060
 
 // init express 
 const app = express();
+
 
 // set middlewares  
 app.use(express.json());
@@ -34,6 +37,9 @@ app.use(express.static("public"));
 // use cookie parser 
 app.use(cookieParser());
 
+
+// routes 
+app.use("/api/v1/category", categoryRouter);  
 
 
 // listen server
