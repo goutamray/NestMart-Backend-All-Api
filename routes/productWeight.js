@@ -1,11 +1,11 @@
 import express from "express";
-import { 
-  createNewProductWeight, 
-  getAllProductWeight, 
-  getSingleProductWeight,
-  deleteProductWeight,
-  updateProductWeight 
-} from "../comtrollers/productWeightController.js";
+import {
+    createNewProductWeight,
+    deleteProductWeight,
+    getAllProductWeight,
+    getSingleProductWeight,
+    updateProductWeight
+} from "../controllers/productWeightController.js";
 
 
 // init router from express  

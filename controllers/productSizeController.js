@@ -53,7 +53,7 @@ export const getSingleProductSize = asyncHandler(async(req, res) => {
  * @ACCESS PUBLIC 
  * 
  */
-export const createNewProductSize = asyncHandler(async(req, res) => {
+export const createProductSize = asyncHandler(async(req, res) => {
   // get form data 
   const { name } = req.body;
 
@@ -117,5 +117,6 @@ export const updateProductSize = asyncHandler(async(req, res) => {
    
    return res.status(200).json({productSize,  message : "Product Size Updated Successfull"})
 });  
+
 
 

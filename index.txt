@@ -1,0 +1,23 @@
+
+pass : Z1nAYtrxoURMK2wg
+user : devgoutam2053 
+
+
+mongodb+srv://devgoutam2053:Z1nAYtrxoURMK2wg@nestmart-app.keiuw.mongodb.net/?retryWrites=true&w=majority&appName=nestmart-app
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

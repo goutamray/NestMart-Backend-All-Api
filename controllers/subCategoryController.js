@@ -2,6 +2,7 @@
 import asyncHandler from "express-async-handler";
 import SubCategory from "../models/SubCategory.js"
 
+
 /**
  * @DESC  GET ALL SUB CATEGORY
  * @METHOD GET
@@ -16,9 +17,9 @@ export const getAllSubCategory = asyncHandler(async(req, res) => {
   // check sub category 
   if (!subCategoryList) {
     return res.status(404).json({ subCategoryList : "", message : "Sub Categories Not Found" });
-  };
+  }
 
-  return res.status(200).json({ subCategoryList,  message : "Get All Sub Category"});
+return res.status(200).json({ subCategoryList,  message : "Get All Sub Category"});
 });
 
 
@@ -38,7 +39,7 @@ export const getSingleSubCategory = asyncHandler(async(req, res) => {
 
  if (!subCategoryData) {
     return  res.status(404).json({ message : "Single Sub Category Data Not Found"});
- };
+ }
 
  // response 
  return res.status(200).json({ subCategoryData , message : "Get Single Sub Category"})
@@ -53,20 +54,20 @@ export const getSingleSubCategory = asyncHandler(async(req, res) => {
  * @ACCESS PUBLIC 
  * 
  */
-export const createNewSubCategory = asyncHandler(async(req, res) => {
+export const createSubCategory = asyncHandler(async(req, res) => {
   // get form data 
   const { name } = req.body;
 
   if (!name ) {
     return res.status(400).json({ message : "All fields are Required" })
   };
-
+ 
 
   // create sub category 
   const newSubCategory = await SubCategory.create({ name });
 
    // save data 
-   return res.status(201).json({ newSubCategory, message : "Sub Category Created Successfull"});
+   return res.status(201).json({ newSubCategory,  message : "Sub Category Created Successfull"});
  });  
 
 
@@ -87,7 +88,7 @@ export const deleteSubCategory = asyncHandler(async(req, res) => {
   // check category
   if (!subCategory) {
     return res.status(404).json({ message : "Sub Category not found" })
-  };
+  }
 
    return res.status(200).json({ subCategory,  message : "Sub Category Deleted Successfull"});
 });
@@ -114,26 +115,7 @@ export const updateSubCategory = asyncHandler(async(req, res) => {
     {new : true});
 
    
-  return res.status(200).json({subCategory,  message : "Sub Category Updated Successfull"});
+   return res.status(200).json({subCategory,  message : "Sub Category Updated Successfull"})
 });  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 

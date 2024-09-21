@@ -1,13 +1,13 @@
 
 import express from "express";
-import { 
-  createNewSlider, 
-  deleteSlider, 
-  getAllSlider,
-  getSingleSlider,
-  updateSlider 
-} from "../comtrollers/sliderController.js";
- import { sliderPhotoMulter } from "../utilis/multer.js";
+import {
+    createNewSlider,
+    deleteSlider,
+    getAllSlider,
+    getSingleSlider,
+    updateSlider
+} from "../controllers/sliderController.js";
+import { sliderPhotoMulter } from "../utilis/multer.js";
 
 
 // init router from express  

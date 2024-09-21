@@ -1,12 +1,12 @@
 
 import express from "express";
-import { 
-  createNewProductRam, 
-  getAllProductRam, 
-  getSingleProductRam,
-  deleteProductRam,
-  updateProductRam 
-} from "../comtrollers/productRamController.js";
+import {
+    createNewProductRam,
+    deleteProductRam,
+    getAllProductRam,
+    getSingleProductRam,
+    updateProductRam
+} from "../controllers/productRamController.js";
 
 
 // init router from express  

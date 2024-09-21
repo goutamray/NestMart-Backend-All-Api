@@ -11,8 +11,11 @@ import { mongoDbConnection } from "./config/mongoDb.js";
 import categoryRouter from "./routes/category.js"; 
 import subCategoryRouter from "./routes/subCategory.js"; 
 import sliderRouter from "./routes/slider.js"; 
+
 import productRamRouter from "./routes/productRam.js"; 
 import productWeightRouter from "./routes/productWeight.js"; 
+import productSizeRouter from "./routes/productSize.js"; 
+import productBrandRouter from "./routes/brand.js"; 
 
 // enviroment variable
 dotenv.config();
@@ -48,6 +51,8 @@ app.use("/api/v1/slider", sliderRouter);
 app.use("/api/v1/subCategory", subCategoryRouter);  
 app.use("/api/v1/productRam", productRamRouter);  
 app.use("/api/v1/productWeight", productWeightRouter);  
+app.use("/api/v1/productSize", productSizeRouter);  
+app.use("/api/v1/brand", productBrandRouter);  
 
 
 // listen server
