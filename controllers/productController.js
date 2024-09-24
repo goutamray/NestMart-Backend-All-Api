@@ -107,7 +107,6 @@ export const getRelatedProducts = asyncHandler(async (req, res) => {
 });
 
 
-
 /**
  * @DESC GET SINGLE PRODUCT 
  * @METHOD GET
