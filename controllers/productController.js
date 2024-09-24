@@ -43,6 +43,7 @@ export const getAllProducts = asyncHandler(async (req, res) => {
     filter.rating = { $eq: parseFloat(rating) };
   }
 
+  
   try {
     // Get all products with category filtering and populated fields
     const productList = await Product.find(filter)
@@ -60,6 +61,10 @@ export const getAllProducts = asyncHandler(async (req, res) => {
     return res.status(500).json({ message: 'Error fetching products' });
   }
 });
+
+
+
+
 
 
 /**

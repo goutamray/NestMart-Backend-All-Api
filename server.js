@@ -17,6 +17,7 @@ import productRamRouter from "./routes/productRam.js";
 import productWeightRouter from "./routes/productWeight.js"; 
 import productSizeRouter from "./routes/productSize.js"; 
 import productBrandRouter from "./routes/brand.js"; 
+import productReviewRouter from "./routes/productReview.js"; 
 
 // enviroment variable
 dotenv.config();
@@ -55,6 +56,7 @@ app.use("/api/v1/productRam", productRamRouter);
 app.use("/api/v1/productWeight", productWeightRouter);  
 app.use("/api/v1/productSize", productSizeRouter);  
 app.use("/api/v1/brand", productBrandRouter);  
+app.use("/api/v1/review", productReviewRouter);  
 
 
 // listen server
