@@ -308,3 +308,51 @@ export const changePassword = async (req, res) => {
 };
 
 
+/**
+ * @DESC GOOGLE AUTHENTICATION
+ * @METHOD GET
+ * @ROUTE /api/v1/user/authwithgoogle
+ * @ACCESS PUBLIC 
+ * 
+ */
+export const loginWithGoogle = async (req, res) => {
+  const { name, phone, email, password, photo, isAdmin } = req.body; 
+
+  try {
+      // Check user
+      const existingUser = await User.findOne({ email: email });
+      if (!existingUser) {
+         const result = await User.create({
+          name : name,
+          email : email, 
+          phone : phone, 
+          photo : photo,
+          password : password,
+          isAdmin : isAdmin,
+         })
+
+         const token = jwt.sign({ 
+          email : result.email, 
+          id: result._id 
+        }, process.env.USER_LOGIN_SECRET); 
+        
+        return res.status(200).send({ user : result, token : token, msg : "User Login Successfull"}); 
+
+      }else{
+         // Check user
+          const existingUser = await User.findOne({ email: email });
+          const token = jwt.sign({ 
+            email : existingUser.email, 
+            id: existingUser._id 
+          }, process.env.USER_LOGIN_SECRET); 
+
+          return res.status(200).send({ user : existingUser, token : token, msg : "User Login Successfull"}); 
+      }
+
+  } catch (error) {
+     console.log(error);
+  }
+}
+
+
+

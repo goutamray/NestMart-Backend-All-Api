@@ -22,7 +22,11 @@ const userSchema = mongoose.Schema({
   photo : {
       type : String,
       default : null,
-    }
+  },
+  isAdmin: {
+    type : Boolean,
+    default : false,
+  }
 },
 {
   timestamps : true,
