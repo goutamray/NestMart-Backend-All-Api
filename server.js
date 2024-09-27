@@ -19,6 +19,7 @@ import productSizeRouter from "./routes/productSize.js";
 import productBrandRouter from "./routes/brand.js"; 
 import productReviewRouter from "./routes/productReview.js"; 
 import userRouter from "./routes/user.js"; 
+import cartRouter from "./routes/cart.js"; 
 
 // enviroment variable
 dotenv.config();
@@ -59,6 +60,7 @@ app.use("/api/v1/productSize", productSizeRouter);
 app.use("/api/v1/brand", productBrandRouter);  
 app.use("/api/v1/review", productReviewRouter);  
 app.use("/api/v1/user", userRouter);  
+app.use("/api/v1/cart", cartRouter);  
 
 
 // listen server
