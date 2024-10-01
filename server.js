@@ -21,6 +21,8 @@ import productReviewRouter from "./routes/productReview.js";
 import userRouter from "./routes/user.js"; 
 import cartRouter from "./routes/cart.js"; 
 import wishlistRouter from "./routes/wishlist.js"; 
+import orderRouter from "./routes/order.js"; 
+import searchRouter from "./routes/search.js"; 
 
 // enviroment variable
 dotenv.config();
@@ -53,8 +55,8 @@ app.use(cookieParser());
 // routes 
 app.use("/api/v1/product", productRouter);  
 app.use("/api/v1/category", categoryRouter);  
-app.use("/api/v1/slider", sliderRouter);  
 app.use("/api/v1/subCategory", subCategoryRouter);  
+app.use("/api/v1/slider", sliderRouter);  
 app.use("/api/v1/productRam", productRamRouter);  
 app.use("/api/v1/productWeight", productWeightRouter);  
 app.use("/api/v1/productSize", productSizeRouter);  
@@ -63,6 +65,8 @@ app.use("/api/v1/review", productReviewRouter);
 app.use("/api/v1/user", userRouter);  
 app.use("/api/v1/cart", cartRouter);  
 app.use("/api/v1/wishlist", wishlistRouter);  
+app.use("/api/v1/order", orderRouter);  
+app.use("/api/v1/search", searchRouter); 
 
 
 // listen server

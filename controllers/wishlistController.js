@@ -1,5 +1,4 @@
 
-
 import asyncHandler from "express-async-handler";
 import WishList from "../models/WishList.js";
 
@@ -10,18 +9,38 @@ import WishList from "../models/WishList.js";
  * @ACCESS PUBLIC 
  * 
  */
-export const getAllWishList = asyncHandler(async(req, res) => {
-    // get all wishlist
-    const wishlist = await WishList.find(req.query);
+// export const getAllWishList = asyncHandler(async(req, res) => {
+//     // get all wishlist
+//     const wishlist = await WishList.find(req.query);
 
-    // check wishlist 
-    if (!wishlist) {
-      return res.status(404).json({ wishlist : "", message : "Wishlist Not Found" });
-    }
+//     // check wishlist 
+//     if (!wishlist) {
+//       return res.status(404).json({ wishlist : "", message : "Wishlist Not Found" });
+//     }
 
-  // response 
-  return res.status(200).json({ wishlist,  message : "Get All Wishlist"});
+//   // response 
+//   return res.status(200).json({ wishlist,  message : "Get All Wishlist"});
+// });
+
+export const getAllWishList = asyncHandler(async (req, res) => {
+
+  const { userId } = req.query;
+  if (!userId) {
+    return res.status(400).json({ message: "userId is required in the query" });
+  }
+
+  // Find wishlist by userId
+  const wishlist = await WishList.find({ userId });
+
+  // Check if wishlist is empty
+  if (!wishlist) {
+    return res.status(404).json({ wishlist: [], message: "Wishlist Not Found" });
+  }
+
+  // Respond with wishlist
+  return res.status(200).json({ wishlist, message: "Get All Wishlist" });
 });
+
 
 
 /**
