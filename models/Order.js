@@ -1,4 +1,5 @@
 
+
 import mongoose from "mongoose";
 
 // create brand schema 
@@ -75,4 +76,6 @@ const orderSchema = mongoose.Schema({
 
 //export default 
 export default mongoose.model("Order", orderSchema);
+
+
 

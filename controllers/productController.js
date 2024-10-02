@@ -335,8 +335,3 @@ export const updateProduct = asyncHandler(async (req, res) => {
 
 
 
-
-
-
-
-

@@ -23,6 +23,8 @@ import cartRouter from "./routes/cart.js";
 import wishlistRouter from "./routes/wishlist.js"; 
 import orderRouter from "./routes/order.js"; 
 import searchRouter from "./routes/search.js"; 
+import messageRouter from "./routes/message.js"; 
+
 
 // enviroment variable
 dotenv.config();
@@ -67,7 +69,7 @@ app.use("/api/v1/cart", cartRouter);
 app.use("/api/v1/wishlist", wishlistRouter);  
 app.use("/api/v1/order", orderRouter);  
 app.use("/api/v1/search", searchRouter); 
-
+app.use("/api/v1/message", messageRouter); 
 
 // listen server
 app.listen(PORT, () => {
