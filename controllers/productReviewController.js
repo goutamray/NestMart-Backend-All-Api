@@ -1,5 +1,4 @@
 
-
 import asyncHandler from "express-async-handler";
 import ProductReview from "../models/ProductReview.js";
 
@@ -70,7 +69,6 @@ export const getSingleReview = asyncHandler(async (req, res) => {
  */
 export const addReview = asyncHandler(async (req, res) => {
   const { productId, customerName, review, customerRating, customerId } = req.body;
-
 
   // Create a new review
   const newReview = new ProductReview({

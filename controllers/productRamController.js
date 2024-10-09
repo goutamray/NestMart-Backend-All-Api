@@ -106,17 +106,16 @@ export const updateProductRam = asyncHandler(async(req, res) => {
   // get params 
   const { id } = req.params;
 
-   // get form data 
-   const { name } = req.body;
+  // get form data 
+  const { name } = req.body;
 
-  
  // update Product Ram
   const productRam = await ProductRam.findByIdAndUpdate(
     id, 
     { name }, 
     {new : true});
 
+   return res.status(200).json({productRam,  message : "Product Ram Updated Successfull"});
    
-   return res.status(200).json({productRam,  message : "Product Ram Updated Successfull"})
 });  
 

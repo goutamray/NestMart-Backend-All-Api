@@ -79,7 +79,7 @@ export const createBrand = asyncHandler(async(req, res) => {
 
     // save data 
     return res.status(201).json({ brand , message : "Brand Created Successfull"})
-})
+});
 
 
 /**
@@ -106,7 +106,7 @@ export const deleteBrand = asyncHandler(async(req, res) => {
 
     // send response 
     return res.status(200).json({ brand,  message : "Brand Deleted Successfull"})
-})
+});
 
 
 /**

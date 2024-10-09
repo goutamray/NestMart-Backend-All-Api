@@ -1,6 +1,5 @@
 
 import asyncHandler from "express-async-handler";
-
 import { findPublicId } from "../helpers/helpers.js";
 import Category from "../models/Category.js";
 import Product from "../models/Product.js";
@@ -18,7 +17,6 @@ export const getAllProducts = asyncHandler(async (req, res) => {
   const { category, minPrice, maxPrice, rating } = req.query;
 
   const filter = {};
-
 
   // Extract category filter from query parameters
   if (category) {
@@ -61,10 +59,6 @@ export const getAllProducts = asyncHandler(async (req, res) => {
     return res.status(500).json({ message: 'Error fetching products' });
   }
 });
-
-
-
-
 
 
 /**

@@ -200,7 +200,6 @@ export const deleteUser= asyncHandler(async(req, res) => {
 });
 
 
-
 /**
  * @DESC UPDATE USER
  * @METHOD PUT / PATCH 

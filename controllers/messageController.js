@@ -1,7 +1,4 @@
 
-
-
-
 import asyncHandler from "express-async-handler";
 import Message from "../models/Message.js";
 
@@ -26,7 +23,6 @@ return res.status(200).json({ messageList,  message : "Get All Message"});
 });
 
 
-
 /**
  * @DESC CREATE MESSAGE
  * @METHOD POST
@@ -49,9 +45,6 @@ export const createMessage = asyncHandler(async(req, res) => {
   return res.status(201).json({ newMessage , message : "Message Created Successfull"})
 })
 
-
-
-
 /**
  * @DESC DELETE MESSAGE
  * @METHOD DETETE
@@ -71,9 +64,9 @@ export const deleteMessage = asyncHandler(async(req, res) => {
     return res.status(404).json({ message : "Message not found" })
   }
 
-
  // send response 
- return res.status(200).json({ deleteMessage,  message : "Message Deleted Successfull"})
+ return res.status(200).json({ deleteMessage,  message : "Message Deleted Successfull"});
+
 })
 
 

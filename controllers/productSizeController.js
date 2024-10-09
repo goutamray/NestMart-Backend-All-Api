@@ -114,7 +114,6 @@ export const updateProductSize = asyncHandler(async(req, res) => {
     { name }, 
     {new : true});
 
-   
    return res.status(200).json({productSize,  message : "Product Size Updated Successfull"})
 });  
 

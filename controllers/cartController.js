@@ -1,5 +1,4 @@
 
-
 import asyncHandler from "express-async-handler";
 import Cart from "../models/Cart.js";
 
@@ -104,7 +103,6 @@ export const updateCart = asyncHandler(async(req, res) => {
 
    // get form data 
    const { productTitle, image, rating, price, quantity, subTotal, productId, userId } = req.body;
-
 
    // update cart
    const cartUpdate = await Cart.findByIdAndUpdate(

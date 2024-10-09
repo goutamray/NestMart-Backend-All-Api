@@ -26,7 +26,6 @@ import { findPublicId } from "../helpers/helpers.js";
 });
  
 
-
 /**
  * @DESC GET SINGLE CATEGORY
  * @METHOD GET
@@ -45,6 +44,7 @@ export const getSingleCategory = asyncHandler(async(req, res) => {
      return res.status(404).json({ message : "Single Category Data Not Found"});
   }
 
+  // return single data 
   return res.status(200).json({ category , message : "Get Single Category"})
 })
 
@@ -88,16 +88,16 @@ export const createCategory = asyncHandler(async(req, res) => {
  * 
  */
 export const deleteCategory = asyncHandler(async(req, res) => {
-     // get params 
-     const { id } = req.params;
+    // get params 
+    const { id } = req.params;
 
-     // delete category data 
-     const category = await Category.findByIdAndDelete(id);
+    // delete category data 
+    const category = await Category.findByIdAndDelete(id);
   
-     // check category
-     if (!category) {
+    // check category
+    if (!category) {
        return res.status(404).json({ message : "Category not found" })
-     }
+    }
 
     // delete cloud file
     await fileDeleteFromCloud(findPublicId(category.photo));
@@ -113,7 +113,6 @@ export const deleteCategory = asyncHandler(async(req, res) => {
  * @ACCESS PUBLIC 
  * 
  */
-
 export const updateCategory = asyncHandler(async (req, res) => {
 
     // Get the category ID from parameters
